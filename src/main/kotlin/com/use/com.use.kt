@@ -15,9 +15,11 @@ fun readFile(fileName: String, readType: String = "l"): ArrayList<String> {
     val inputString = bufferedReader.use { it.readText() }
 
     // parse file to array using the preferred separators
-    when (readType) {
+    return when (readType) {
         // split line by line
-        "l" -> return inputString.split("\r\n") as ArrayList<String>
+        "l" -> inputString.split("\r\n") as ArrayList<String>
+        // split by empty line
+        "bl" -> inputString.split("\r\n\r\n") as ArrayList<String>
         else -> throw Exception("Invalid split type (broken readFile)")
     }
 }

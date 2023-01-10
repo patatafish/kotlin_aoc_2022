@@ -1,5 +1,3 @@
-package common
-
 import com.use.readFile
 import java.util.LinkedList
 import java.util.Queue
