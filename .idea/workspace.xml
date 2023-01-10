@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7fe44d-e44a-445b-b134-9c6287f4090b" name="Changes" comment="d11*">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/d11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/d11.kt" afterDir="false" />
+    <list default="true" id="ad7fe44d-e44a-445b-b134-9c6287f4090b" name="Changes" comment="d11**">
+      <change afterPath="$PROJECT_DIR$/dat/d12.dat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/d12.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dat/test.dat" beforeDir="false" afterPath="$PROJECT_DIR$/dat/test.dat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +28,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Jts1y5agUcD4V3VS1edAg1lv3c" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -108,14 +111,22 @@
       <option name="project" value="LOCAL" />
       <updated>1673343948639</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="d11**">
+      <created>1673358549969</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673358549970</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="d09**" />
     <MESSAGE value="d10**" />
     <MESSAGE value="d11*" />
-    <option name="LAST_COMMIT_MESSAGE" value="d11*" />
+    <MESSAGE value="d11**" />
+    <option name="LAST_COMMIT_MESSAGE" value="d11**" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
