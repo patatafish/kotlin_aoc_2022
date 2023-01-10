@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7fe44d-e44a-445b-b134-9c6287f4090b" name="Changes" comment="d10**">
-      <change afterPath="$PROJECT_DIR$/dat/d11.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/d11.kt" afterDir="false" />
+    <list default="true" id="ad7fe44d-e44a-445b-b134-9c6287f4090b" name="Changes" comment="d11*">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dat/test.dat" beforeDir="false" afterPath="$PROJECT_DIR$/dat/test.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/use/com.use.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/use/com.use.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/common/d10.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/d10.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/d11.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/d11.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,13 +101,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673334381641</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="d11*">
+      <created>1673343948639</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673343948639</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="d09**" />
     <MESSAGE value="d10**" />
-    <option name="LAST_COMMIT_MESSAGE" value="d10**" />
+    <MESSAGE value="d11*" />
+    <option name="LAST_COMMIT_MESSAGE" value="d11*" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
