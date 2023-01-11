@@ -28,14 +28,28 @@ fun goodNeighbors(row: Int,
                   col: Int,
                   maxRow: Int,
                   maxCol: Int,
-                  diagonal<Boolean> = false): Array<Array<Int>> {
+                  diagonal: Boolean = false): MutableList<Array<Int>> {
     // the new list of neighbor cells
     val neighbor = mutableListOf<Array<Int>>()
+    val goodNeighbor = mutableListOf<Array<Int>>()
     // fill the list with all our neighbors
     neighbor.add(arrayOf(row-1, col))
     neighbor.add(arrayOf(row+1, col))
     neighbor.add(arrayOf(row, col-1))
     neighbor.add(arrayOf(row, col+1))
+    // if we need all 8 neighbors, add the diagonal as well
+    if (diagonal) {
+        neighbor.add(arrayOf(row-1, col-1))
+        neighbor.add(arrayOf(row+1, col-1))
+        neighbor.add(arrayOf(row+1, col-1))
+        neighbor.add(arrayOf(row-1, col+1))
+    }
 
-
+    // check for out-of-bounds, only record in-bounds
+    for (i in neighbor.indices) {
+        if (neighbor[i][0] < 0 || neighbor[i][1] < 0) continue
+        if (neighbor[i][0] > maxRow-1 || neighbor[i][1] > maxCol-1) continue
+        goodNeighbor.add(neighbor[i])
+    }
+    return goodNeighbor
 }

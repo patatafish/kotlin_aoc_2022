@@ -1,7 +1,8 @@
+import com.use.goodNeighbors
 import com.use.readFile
 
 fun main () {
-    val rawData = readFile("test.dat")
+    val rawData = readFile("d12.dat")
 
     val heightMap = makeMap(rawData)
 
@@ -36,13 +37,43 @@ fun runMaze(map: Array<Array<Int>>) {
     running@
     while (true) {
         // establish our current cell from the route list
-        var currentLocation = route.removeAt(0)
-        // establish valid moves
+        val currentLocation = route.removeAt(0)
+        val currentSteps = travelCost[currentLocation[0]][currentLocation[1]]
 
-        // evaluate costs
-        // record if cheaper
-        // exit if we've found it
-        break@running
+        // exit if we're at end of maze
+        if (map[currentLocation[0]][currentLocation[1]] == 27) {
+            println("I found the exit after $currentSteps steps.")
+            break@running
+        }
+
+        // establish valid moves
+        val checkList = goodNeighbors(currentLocation[0], currentLocation[1], map.size, map[0].size)
+        // loop across moves to add them to the route stack for later check
+        for (move in checkList) {
+            // first break the check if there is a "wall" of > 1 difference in height, continue to next item
+            if (map[move[0]][move[1]] - map[currentLocation[0]][currentLocation[1]] > 1) continue
+            // is it cheaper to move this route than the currently cheapest way?
+            if (currentSteps + 1 < travelCost[move[0]][move[1]]) {
+                // if so then record this new cheaper route
+                travelCost[move[0]][move[1]] = currentSteps + 1
+                // add this valid moves to the check stack
+                route.add(move.toIntArray())
+            }
+        }
+    }
+
+    for (row in travelCost) {
+        for (col in row) {
+            // int value to string for print of maze, unvisited cells get a .
+            var formattedString = if (col == Int.MAX_VALUE) "."
+                                        else col.toString()
+            // pad the string for column output
+            while (formattedString.length < 4) {
+                formattedString = " $formattedString"
+            }
+            print(formattedString)
+        }
+        println()
     }
 }
 
