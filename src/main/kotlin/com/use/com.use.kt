@@ -23,3 +23,19 @@ fun readFile(fileName: String, readType: String = "l"): ArrayList<String> {
         else -> throw Exception("Invalid split type (broken readFile)")
     }
 }
+
+fun goodNeighbors(row: Int,
+                  col: Int,
+                  maxRow: Int,
+                  maxCol: Int,
+                  diagonal<Boolean> = false): Array<Array<Int>> {
+    // the new list of neighbor cells
+    val neighbor = mutableListOf<Array<Int>>()
+    // fill the list with all our neighbors
+    neighbor.add(arrayOf(row-1, col))
+    neighbor.add(arrayOf(row+1, col))
+    neighbor.add(arrayOf(row, col-1))
+    neighbor.add(arrayOf(row, col+1))
+
+
+}
