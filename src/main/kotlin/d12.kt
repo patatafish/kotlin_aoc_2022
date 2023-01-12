@@ -1,8 +1,7 @@
-import com.use.goodNeighbors
 import com.use.readFile
 
-fun main () {
-    val rawData = readFile("d12.dat")
+fun main() {
+    val rawData = readFile("test.dat")
 
     val heightMap = makeMap(rawData)
 
@@ -11,62 +10,53 @@ fun main () {
     println("exiting...")
 }
 
+class Map () {
+    val map = mutableListOf<Node>()
+    var start = arrayOf(-1, -1)
+    var end = arrayOf(-1, -1)
 
-fun runMaze(map: Array<Array<Int>>) {
+    fun setEnds() {
+        println("Establishing the start and end of this maze...")
+        for (node in map) {
+            when (node.char) {
+                'S' -> start = arrayOf(node.row, node.col)
+                'E' -> end = arrayOf(node.row, node.col)
+                else -> continue
+            }
+        }
+        println("Start: (${start[0]}, ${start[1]})\nEnd: (${end[0]}, ${end[1]})")
+    }
+}
+
+class Node (myRow: Int, myCol: Int, myChar: Char) {
+    val row = myRow
+    val col = myCol
+    val char = myChar
+    var cost = Int.MAX_VALUE
+    var visited = false
+    var previous = arrayOf(-1, -1)
+    val height = when (char) {
+        'S' -> 0
+        'E' -> 27
+        else -> (char.code - 96)
+    }
+}
+
+fun runMaze(maze: Map) {
     println("Running the maze...")
-    // create a copy of the map with travel cost values for fastest route
-    val travelCost = Array(map.size) { Array(map[0].size) { Int.MAX_VALUE } }
-    // stack for running through maze
-    val route = mutableListOf<IntArray>()
+    maze.setEnds()
+    for (node in maze.map) {
 
-    // find the start of the maze, add that to the route stack
-    search_loop@
-    for (row in map.indices) {
-        for (cell in map[row].indices) {
-            if (map[row][cell] == 0) {
-                route.add(intArrayOf(row, cell))
-                break@search_loop // found the start, break and stop looking
-            }
-        }
     }
-    println("Found the start of the maze at (${route[0][0]}, ${route[0][1]})")
+}
 
-    // set starting travel cost as 0
-    travelCost[route[0][0]][route[0][1]] = 0
-    // main loop to run maze
-    running@
-    while (true) {
-        // establish our current cell from the route list
-        val currentLocation = route.removeAt(0)
-        val currentSteps = travelCost[currentLocation[0]][currentLocation[1]]
 
-        // exit if we're at end of maze
-        if (map[currentLocation[0]][currentLocation[1]] == 27) {
-            println("I found the exit after $currentSteps steps.")
-            break@running
-        }
-
-        // establish valid moves
-        val checkList = goodNeighbors(currentLocation[0], currentLocation[1], map.size, map[0].size)
-        // loop across moves to add them to the route stack for later check
-        for (move in checkList) {
-            // first break the check if there is a "wall" of > 1 difference in height, continue to next item
-            if (map[move[0]][move[1]] - map[currentLocation[0]][currentLocation[1]] > 1) continue
-            // is it cheaper to move this route than the currently cheapest way?
-            if (currentSteps + 1 < travelCost[move[0]][move[1]]) {
-                // if so then record this new cheaper route
-                travelCost[move[0]][move[1]] = currentSteps + 1
-                // add this valid moves to the check stack
-                route.add(move.toIntArray())
-            }
-        }
-    }
-
+fun showMaze(travelCost: Array<Array<Int>>) {
     for (row in travelCost) {
         for (col in row) {
             // int value to string for print of maze, unvisited cells get a .
             var formattedString = if (col == Int.MAX_VALUE) "."
-                                        else col.toString()
+            else col.toString()
             // pad the string for column output
             while (formattedString.length < 4) {
                 formattedString = " $formattedString"
@@ -77,20 +67,13 @@ fun runMaze(map: Array<Array<Int>>) {
     }
 }
 
-
-
-fun makeMap(myData: ArrayList<String>): Array<Array<Int>> {
-    var map: Array<Array<Int>> = arrayOf()
-    for (row in myData) {
-        var newRow = arrayOf<Int>()
-        for (cell in row.toCharArray()) {
-            newRow += when (cell) {
-                'S' -> 0
-                'E' -> 27
-                else -> (cell.code - 96)
-            }
+fun makeMap(myData: ArrayList<String>): Map {
+    val newMap = Map()
+    for (row in 0 until myData.size) {
+        for (col in 0 until myData[0].length) {
+            val node = Node(row, col, myData[row][col])
+            newMap.map.add(node)
         }
-        map += newRow
     }
-    return map
+    return newMap
 }
