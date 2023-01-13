@@ -48,7 +48,7 @@ fun goodNeighbors(row: Int,
     // check for out-of-bounds, only record in-bounds
     for (i in neighbor.indices) {
         if (neighbor[i][0] < 0 || neighbor[i][1] < 0) continue
-        if (neighbor[i][0] > maxRow-1 || neighbor[i][1] > maxCol-1) continue
+        if (neighbor[i][0] > maxRow || neighbor[i][1] > maxCol) continue
         goodNeighbor.add(neighbor[i])
     }
     return goodNeighbor
