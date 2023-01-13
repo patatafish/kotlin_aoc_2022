@@ -120,8 +120,8 @@ fun runMaze(maze: Map) {
     // create and load the search q
     val q = mutableListOf<Node>()
     q.add(maze.start)
-    // display control
-    var i = 1
+    // print control
+    // var i = 1
     // loop across all cells to find the shortest path
     runningMaze@
     do {
@@ -155,8 +155,9 @@ fun runMaze(maze: Map) {
         // now that we checked all neighbors, remove this node from our check queue
         q.removeFirst()
 
-        i++
-        if (i % 500 == 0) maze.show()
+        // print control
+        // i++
+        // if (i % 500 == 0) maze.show()
 
     } while (q.isNotEmpty())
 

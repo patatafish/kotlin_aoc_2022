@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad7fe44d-e44a-445b-b134-9c6287f4090b" name="Changes" comment="d12 re-implement djkstra using class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/use/com.use.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/use/com.use.kt" afterDir="false" />
+    <list default="true" id="ad7fe44d-e44a-445b-b134-9c6287f4090b" name="Changes" comment="d12**">
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/d12.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/d12.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,6 +21,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -163,6 +162,17 @@
     </task>
     <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="d09**" />
