@@ -127,7 +127,7 @@ fun runMaze(maze: Map) {
     do {
         // mark this cell as visited
         q.first().visited = true
-        // part 2 adjustment, all 'a' spaces are starting points, set the cost to 0 if the char is a
+        // part 2 adjustment, all 'a' spaces are starting points, set the cost to 0 if the char is 'a'
         //if (q.first().char == 'a') {
             //q.first().previous = maze.setNull()
             //q.first().cost = 0
